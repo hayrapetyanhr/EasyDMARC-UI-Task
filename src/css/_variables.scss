@@ -1,0 +1,56 @@
+$black: #000000;
+$black-1: #272727;
+$black-2: #333333;
+$black-3: #484964;
+$dark-gray: #566170;
+$dark-gray-1: #8994A3;
+$dark-gray-2: #999999;
+$dark-gray-3: #CED4DA;
+$dark-gray-4: #F7F9FC;
+$gray: #E1E6EC;
+$gray-2: #F3F3FA;
+$light-gray: #F2F4F7;
+$white: #ffffff;
+$blue: #1B2C74;
+$blue-1: #6473B5;
+$blue-2: #2C79E7;
+$blue-3: #00A9E0;
+$red: #E63200;
+$orange: #FBB03B;
+$green: #0DB4A7;
+$light-green: #0DC3A7;
+$transparent: transparent;
+
+$all-colors: (
+        'black': $black,
+        'black-1': $black-1,
+        'black-2': $black-2,
+        'black-3': $black-3,
+        'dark-gray': $dark-gray,
+        'dark-gray-1': $dark-gray-1,
+        'dark-gray-2': $dark-gray-2,
+        'dark-gray-3': $dark-gray-3,
+        'dark-gray-4': $dark-gray-4,
+        'gray': $gray,
+        'gray-2': $gray-2,
+        'light-gray': $light-gray,
+        'white': $white,
+        'blue': $blue,
+        'blue-1': $blue-1,
+        'blue-2': $blue-2,
+        'blue-3': $blue-3,
+        'red': $red,
+        'orange': $orange,
+        'green': $green,
+        'light-green': $light-green,
+        'transparent': $transparent,
+);
+
+@each $color, $value in $all-colors {
+  .color-#{$color} {
+    color: $value;
+  }
+  .bg-#{$color} {
+    background-color: $value;
+  }
+}

@@ -1,0 +1,266 @@
+header {
+  .top-panel {
+    @extend .vertical-center;
+    @extend .space-between;
+    @extend .color-white;
+    @extend .bg-blue;
+    padding: 7px 12px;
+
+    .logo {
+      max-width: 197px;
+
+      img {
+        display: none;
+        &.mobile-logo {
+          display: block;
+          @media (min-width: 576px) {
+            display: none;
+          }
+        }
+        @media (min-width: 576px) {
+          display: block;
+        }
+      }
+    }
+
+    .right-panel {
+      @extend .d-flex;
+      @extend .align-items-center;
+      padding-right: 20px;
+
+      &-item {
+        @extend .position-relative;
+        @extend .vertical-center;
+        font-family: 'Inter', sans-serif;
+        font-size: 13px;
+        margin-left: 16px;
+        padding-left: 16px;
+
+        &:not(:last-child):after {
+          content: '';
+          @extend .position-absolute;
+          @extend .bg-blue-3;
+          transform: translateY(-50%);
+          right: -16px;
+          top: 50%;
+          width: 1px;
+          height: 16px;
+        }
+
+        &.notification .right-panel-item-link {
+          @extend .background-contain;
+          @extend .position-relative;
+          @extend .d-block;
+          width: 24px;
+          height: 24px;
+          background-image: url("../../image/bell.svg");
+
+          .notification-count {
+            @extend .position-absolute;
+            @extend .text-center;
+            @extend .bg-red;
+            font-family: 'Roboto', sans-serif;
+            border: 1px solid $blue;
+            border-radius: 15px;
+            line-height: 15px;
+            overflow: hidden;
+            font-weight: 500;
+            font-size: 12px;
+            height: 15px;
+            right: -4px;
+            width: 15px;
+            top: -3px;
+          }
+        }
+
+        &.service {
+          display: none;
+          @media (min-width: 576px) {
+            display: flex;
+          }
+          .service-new {
+            @extend .d-inline-block;
+            @extend .bg-orange;
+            font-family: "Roboto", sans-serif;
+            text-transform: uppercase;
+            border-radius: 3px;
+            line-height: 18px;
+            font-weight: 600;
+            padding: 3px 8px;
+            margin-left: 8px;
+            font-size: 12px;
+          }
+        } 
+
+        &.help .right-panel-item-link {
+          @extend .background-contain;
+          @extend .d-block;
+          background-image: url("../../image/help.svg");
+          margin-right: 8px;
+          width: 14px;
+          height: 14px;
+        }
+
+        &.account .right-panel-item-link {
+          @extend .d-inline-block;
+          @extend .text-center;
+          @extend .bg-blue-3;
+          font-family: "Roboto", sans-serif;
+          border-radius: 16px;
+          line-height: 20px;
+          font-weight: 400;
+          font-size: 12px;
+          height: 32px;
+          padding: 7px;
+          width: 32px;
+        }
+      }
+    }
+  }
+
+  .middle-panel {
+    @extend .space-between;
+    @extend .bg-white;
+    @extend .vertical-center;
+
+    .left-side {
+      @extend .vertical-center;
+
+      .sidebar-toggle {
+        @extend .d-block;
+        @extend .text-center;
+        width: 48px;
+        @media (min-width: 576px) {
+          display: none;
+        }
+      }
+
+      .menu-link {
+        @extend .vertical-center;
+        border-right: 1px solid $gray;
+        border-left: 1px solid $gray;
+        margin-right: 16px;
+        padding: 20px 12px;
+        @media (min-width: 576px) {
+          border-left: none;
+        }
+
+        &-icon {
+          @extend .background-center;
+          background-image: url("../../image/platform.svg");
+          background-size: 20px;
+          margin-right: 8px;
+          width: 24px;
+          height: 24px;
+        }
+
+        &-text {
+          @extend .color-blue;
+          @extend .d-none;
+          margin-right: 8px;
+          min-width: 160px;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          @media (min-width: 576px) {
+            display: block;
+          }
+        }
+
+        .arrow-right {
+          @extend .background-center;
+          background-image: url("../../image/arrow-right.svg");
+          background-size: 7px;
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      .plan-buttons {
+        a {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 16px;
+
+          &.plus-btn {
+            @extend .color-blue;
+            @extend .d-none;
+            margin-right: 16px;
+            @media (min-width: 576px) {
+              display: inline-block;
+            }
+          }
+
+          &.upgrade-btn {
+            @extend .bg-orange;
+            @extend .color-white;
+            @extend .text-center;
+            border-radius: 5px;
+            padding: 12px 16px;
+            @media (min-width: 576px) {
+              background-color: #0DB4A7;
+            }
+          }
+        }
+      }
+    }
+
+    .volume-usage {
+      @extend .vertical-center;
+      padding-right: 24px;
+
+      .percent-icon {
+        @extend .background-contain;
+        background-image: url("../../image/percent-v2.svg");
+        width: 40px;
+        height: 40px;
+        @media (min-width: 992px) {
+          margin-right: 8px;
+        }
+      }
+
+      .dropdown {
+        @extend .position-relative;
+        font-family: "Inter", sans-serif;
+
+        &-btn {
+          @extend .color-blue;
+          @extend .vertical-center;
+          padding: 0;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          span {
+            display: none;
+            @media (min-width: 992px) {
+              display: block;
+            }
+          }
+
+          &:after {
+            content: url("../../image/arrow-down.svg");
+            margin-left: 16px;
+            height: 21px;
+          }
+        }
+
+        .dropdown-menu {
+          @extend .position-absolute;
+          @extend .bg-white;
+          @extend .d-none;
+          @extend .w-100;
+          left: 0;
+          top: 100%;
+          padding: 10px 0;
+
+          .dropdown-item {
+            @extend .color-blue;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+          }
+        }
+      }
+    }
+  }
+}
